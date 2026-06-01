@@ -168,7 +168,7 @@
       --nav-dropdown-hover-color: #f5c518;
     }
 
-/* Hero - image limitée à la moitié droite */
+/* Hero - image limitée à la moitié droite (desktop) */
     #hero img {
       position: absolute;
       top: 0;
@@ -188,6 +188,23 @@
         rgba(6, 6, 6, 0.1) 100%
       ) !important;
       z-index: 2;
+    }
+    /* Hero - responsive mobile */
+    @media (max-width: 991px) {
+      #hero img {
+        width: 100%;
+        left: 0;
+        right: 0;
+        object-position: center top;
+      }
+      #hero:before {
+        background: linear-gradient(
+          to bottom,
+          rgba(6, 6, 6, 0.55) 0%,
+          rgba(6, 6, 6, 0.80) 60%,
+          #060606 100%
+        ) !important;
+      }
     }
   </style>
 </head>
