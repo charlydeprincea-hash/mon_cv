@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Plateforme SIG – Charles BEZON</title>
+  <meta name="description" content="Plateforme SIG de gestion des interfaces chantier – TFE SICMA Bouygues Travaux Publics, Ligne 1 du Métro d'Abidjan.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent-color: #f5c518;
+      --nav-hover-color: #f5c518;
+    }
+    body { background-color: var(--background-color); }
+
+    .detail-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: rgba(20,20,20,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+      padding: 14px 0;
+    }
+    .detail-nav .back-link {
+      color: var(--default-color);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    .detail-nav .back-link:hover { color: var(--accent-color); }
+    .detail-nav .back-link i { color: var(--accent-color); }
+    .detail-nav .sitename {
+      font-family: var(--heading-font);
+      font-weight: 600;
+      color: var(--heading-color);
+      font-size: 15px;
+    }
+    .detail-nav .contact-link {
+      font-size: 13px;
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .detail-nav .contact-link:hover { opacity: 0.75; }
+
+    .detail-page { padding-top: 90px; padding-bottom: 80px; }
+
+    .additional-gallery { margin-bottom: 5rem; }
+    .additional-gallery .gallery-slider .swiper-slide img {
+      border-radius: 6px;
+      height: 280px;
+      width: auto;
+      object-fit: cover;
+    }
+    .additional-gallery .gallery-slider .swiper-slide { width: auto; }
+
+    .portfolio-details .project-nav { padding-top: 3rem; border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%); }
+    .portfolio-details .project-nav .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.all-projects {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--default-color);
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.all-projects:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.next-project {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--heading-color);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.next-project:hover { opacity: 0.7; }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.next-project .nav-content { text-align: right; }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.next-project .nav-direction {
+      display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+      color: color-mix(in srgb, var(--default-color), transparent 50%); margin-bottom: 4px;
+    }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.next-project .nav-title {
+      display: block; font-size: 16px; font-family: var(--heading-font); font-weight: 300;
+    }
+    .portfolio-details .project-nav .nav-wrapper .nav-link.next-project i {
+      font-size: 22px; color: var(--accent-color);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="detail-nav">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html#portfolio" class="back-link">
+        <i class="bi bi-arrow-left me-2"></i>Retour au CV
+      </a>
+      <span class="sitename">Charles BEZON</span>
+      <a href="index.html#contact" class="contact-link">Me contacter</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="portfolio-details detail-page">
+      <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero-section" data-aos="fade-up">
+          <div class="row gy-5 align-items-start">
+
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+              <div class="project-header">
+                <div class="project-meta">
+                  <span class="category">TFE · Web Mapping</span>
+                  <span class="year">2025</span>
+                </div>
+                <h1 class="project-title">Plateforme SIG de Gestion des Interfaces</h1>
+                <p class="project-summary">Application web de cartographie interactive développée lors de mon TFE (mars–sept 2025) au sein de SICMA – Bouygues Travaux Publics, pour la Ligne 1 du Métro d'Abidjan.</p>
+                <div class="project-tags">
+                  <span class="tag">Web Mapping</span>
+                  <span class="tag">Leaflet.js</span>
+                  <span class="tag">Laravel</span>
+                  <span class="tag">Bootstrap</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">SIG</span>
+                  <span class="tag">QGIS</span>
+                  <span class="tag">Multi-rôles</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+              <div class="hero-image">
+                <a href="images/Interfaces Manager.png" class="glightbox" data-gallery="g1">
+                  <img src="images/Interfaces Manager.png" alt="Interface Manager" class="img-fluid">
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Description + Specs -->
+        <section class="content-section" data-aos="fade-up">
+          <div class="row gy-5">
+
+            <div class="col-lg-8">
+              <div class="main-content">
+                <h2>Présentation du Projet</h2>
+                <p>Dans le cadre de mon Travail de Fin d'Études, j'ai conçu et développé une application web complète de cartographie interactive (Web Mapping) pour la gestion des interfaces chantier de la Ligne 1 du Métro d'Abidjan. L'objectif était de centraliser les données géospatiales liées aux concessionnaires de réseaux et de faciliter le suivi des Interruptions Temporaires de la Circulation (ITC).</p>
+                <p>L'application repose sur Leaflet.js pour la cartographie côté client, Laravel (PHP) et PostgreSQL pour le backend, et Bootstrap pour l'interface. Les données géospatiales (réseaux, emprises, géométries de chantier) ont été préparées et chargées dans PostgreSQL via QGIS. Elle propose un système d'authentification avec quatre niveaux d'accès distincts : visiteur, utilisateur, gestionnaire et administrateur, assurant ainsi la sécurité et la maîtrise des droits d'édition.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="project-specs">
+                <div class="spec-item">
+                  <h5>Contexte</h5>
+                  <p>SICMA – Bouygues Travaux Publics</p>
+                </div>
+                <div class="spec-item">
+                  <h5>Période</h5>
+                  <p>Mars – Septembre 2025</p>
+                </div>
+                <div class="spec-item">
+                  <h5>Rôle</h5>
+                  <p>Développeur &amp; Analyste SIG</p>
+                </div>
+                <div class="spec-item">
+                  <h5>Technologies</h5>
+                  <p>Leaflet.js · Laravel · Bootstrap · PostgreSQL · QGIS</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Fonctionnalités clés -->
+        <section class="process-timeline" data-aos="fade-up">
+          <div class="timeline-header">
+            <h2>Fonctionnalités Clés</h2>
+          </div>
+          <div class="timeline-steps">
+
+            <div class="timeline-item">
+              <div class="step-marker">
+                <span class="step-number">01</span>
+              </div>
+              <div class="step-content">
+                <h4>Cartographie des Réseaux Concessionnaires</h4>
+                <p>Cartographie interactive des réseaux souterrains (électrique, télécoms, eau, assainissement) avec attributs et fonds de carte interchangeables.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="step-marker">
+                <span class="step-number">02</span>
+              </div>
+              <div class="step-content">
+                <h4>Suivi des ITC</h4>
+                <p>Programmation et visualisation des Interruptions Temporaires de la Circulation : chaque ITC est géolocalisé sur la carte avec sa durée, ses horaires et les voies concernées, pour communiquer efficacement avec les parties prenantes.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="step-marker">
+                <span class="step-number">03</span>
+              </div>
+              <div class="step-content">
+                <h4>Suivi des Chantiers</h4>
+                <p>Carte interactive avec barre de progression par chantier, commentaires géolocalisés et historique des interventions.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="step-marker">
+                <span class="step-number">04</span>
+              </div>
+              <div class="step-content">
+                <h4>Gestion des Accès Multi-niveaux</h4>
+                <p>Système d'authentification avec quatre profils (visiteur, utilisateur, gestionnaire, admin) pour maîtriser les droits de lecture et d'édition.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Galerie (toutes les captures) -->
+        <section class="additional-gallery" data-aos="fade-up">
+          <div class="gallery-slider swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": { "delay": 4000 },
+                "slidesPerView": "auto",
+                "spaceBetween": 16,
+                "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+              }
+            </script>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="images/Interfaces Manager.png" class="glightbox" data-gallery="g2">
+                  <img src="images/Interfaces Manager.png" alt="Interface Manager">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="images/Connexion.png" class="glightbox" data-gallery="g2">
+                  <img src="images/Connexion.png" alt="Connexion">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="images/Module 1.png" class="glightbox" data-gallery="g2">
+                  <img src="images/Module 1.png" alt="Module 1">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="images/Module 2.png" class="glightbox" data-gallery="g2">
+                  <img src="images/Module 2.png" alt="Module 2">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="images/ITC.png" class="glightbox" data-gallery="g2">
+                  <img src="images/ITC.png" alt="Suivi ITC">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="images/Réseaux.png" class="glightbox" data-gallery="g2">
+                  <img src="images/Réseaux.png" alt="Réseaux concessionnaires">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="images/S Chantier.png" class="glightbox" data-gallery="g2">
+                  <img src="images/S Chantier.png" alt="Suivi chantiers">
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="project-nav" data-aos="fade-up">
+          <div class="nav-wrapper">
+            <a href="index.html#portfolio" class="nav-link all-projects">
+              <i class="bi bi-grid-3x3-gap"></i>
+              Tous les projets
+            </a>
+            <a href="portfolio2.html" class="nav-link next-project">
+              <div class="nav-content">
+                <span class="nav-direction">Projet suivant</span>
+                <span class="nav-title">Module Cartographique de Suivi des Chantiers</span>
+              </div>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

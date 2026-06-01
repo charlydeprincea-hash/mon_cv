@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Charles BEZON - Ingénieur Géomètre-Topographe</title>
+  <meta name="description" content="CV en ligne de Bezon Amoikon Charles de Prince, Ingénieur Génie Civil Géomètre-Topographe, spécialisé en SIG et géomatique.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    .competence-card {
+      background: var(--surface-color);
+      border-radius: 12px;
+      padding: 28px 22px;
+      height: 100%;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .competence-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .competence-card .icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent-color), transparent 85%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .competence-card .icon-wrapper i {
+      font-size: 24px;
+      color: var(--accent-color);
+    }
+    .competence-card h4 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+    }
+    .competence-card ul {
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+    }
+    .competence-card ul li {
+      font-size: 14px;
+      color: var(--default-color);
+      padding: 3px 0;
+    }
+    .competence-card ul li::before {
+      content: "▸ ";
+      color: var(--accent-color);
+    }
+
+    /* ── Portfolio Cards (style MyPage) ── */
+    .proj-card {
+      background: transparent;
+      border: none;
+      transition: transform 0.4s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-card:hover { transform: translateY(-8px); }
+    .proj-img-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 32px;
+      flex-shrink: 0;
+    }
+    .proj-img-wrap img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .proj-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.70);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .proj-actions {
+      display: flex;
+      gap: 16px;
+      transform: translateY(20px);
+      transition: transform 0.4s ease;
+    }
+    .proj-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--surface-color);
+      color: var(--heading-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 18px;
+    }
+    .proj-btn:hover {
+      background: var(--accent-color);
+      color: #000;
+      transform: scale(1.1);
+    }
+    .proj-img-wrap:hover .proj-overlay { opacity: 1; }
+    .proj-img-wrap:hover .proj-actions { transform: translateY(0); }
+    .proj-img-wrap:hover img { transform: scale(1.05); }
+    .proj-body { flex-grow: 1; display: flex; flex-direction: column; }
+    .proj-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .proj-cat { color: var(--accent-color); font-family: var(--heading-font); }
+    .proj-yr { color: color-mix(in srgb, var(--default-color), transparent 50%); }
+    .proj-title {
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--heading-color);
+      margin-bottom: 16px;
+      font-family: var(--heading-font);
+      line-height: 1.3;
+    }
+    .proj-desc {
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
+    }
+    @media (max-width: 768px) {
+      .proj-img-wrap img { height: 240px; }
+      .proj-card:hover { transform: none; }
+    }
+
+    /* Remplacement rouge → bleu */
+    :root {
+      --accent-color: #f5c518;
+      --nav-hover-color: #f5c518;
+      --nav-dropdown-hover-color: #f5c518;
+    }
+
+/* Hero - image limitée à la moitié droite */
+    #hero img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: auto;
+      width: 55%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      z-index: 1;
+    }
+    #hero:before {
+      background: linear-gradient(
+        to right,
+        #060606 30%,
+        rgba(6, 6, 6, 0.75) 55%,
+        rgba(6, 6, 6, 0.1) 100%
+      ) !important;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">Charles BEZON</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="#about" data-i18n="nav.about">Profil</a></li>
+          <li><a href="#resume" data-i18n="nav.resume">Parcours</a></li>
+          <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
+          <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+<a class="btn-getstarted" href="#about" data-i18n="nav.btn">Mon Profil</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="images/Couverture.png" alt="Charles BEZON" data-aos="fade-in">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 data-i18n="hero.greeting">Bonjour, je suis Charles BEZON</h2>
+            <p>Je suis <span class="typed" data-typed-items="Ingénieur en Génie Civil, Ingénieur Géomètre-Topographe,Géomaticien,Spécialiste SIG,Développeur Web Mapping"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <a href="mailto:charlesdeprincea@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+              <a href="tel:+2250767753684" title="Téléphone"><i class="bi bi-telephone-fill"></i></a>
+              <a href="https://www.linkedin.com/in/amoikon-charles-d-p-bezon-718651254" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle" data-i18n="about.subtitle">Mon Profil</span>
+        <h2 data-i18n="about.title">À Propos de Moi</h2>
+        <p data-i18n="about.desc">Audacieux et polyvalent, passionné par la géomatique, les SIG et les nouvelles technologies appliquées aux Grands Projets.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="profile-avatar">
+                  <img src="images/CharlesD.png" class="img-fluid" alt="Charles BEZON">
+                  <div class="status-indicator"></div>
+                </div>
+                <h3>Amoikon Charles De Prince BEZON</h3>
+                <span class="role" data-i18n="about.role">Ingénieur Génie Civil</span>
+                <span style="display:block; color:#ffffff; font-style:italic; font-size:13px; margin-top:4px;" data-i18n="about.specialty">Spécialité Géomètre-Topographe</span>
+              </div>
+
+              <div class="profile-stats">
+                <div class="stat-item">
+                  <h4>4</h4>
+                  <p data-i18n="about.stat1">Stages &amp; Projets</p>
+                </div>
+                <div class="stat-item">
+                  <h4>BAC+5</h4>
+                  <p data-i18n="about.stat2">2 ans Prépa + 3 ans Ing.</p>
+                </div>
+              </div>
+
+              <div class="profile-actions">
+                <a href="docs/CV BEZON AMOIKON CHARLES DE PRINCE.pdf" class="btn-primary" download><i class="bi bi-download"></i> <span data-i18n="about.btn.download">Télécharger CV</span></a>
+                <a href="#contact" class="btn-secondary"><i class="bi bi-envelope"></i> <span data-i18n="about.btn.contact">Me Contacter</span></a>
+              </div>
+
+              <div class="social-connect">
+                <a href="mailto:charlesdeprincea@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
+                <a href="tel:+2250767753684" title="Téléphone"><i class="bi bi-telephone"></i></a>
+                <a href="https://www.linkedin.com/in/amoikon-charles-d-p-bezon-718651254?utm_source=share_via&utm_content=profile&utm_medium=member_android" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
+            <div class="content-wrapper">
+              <div class="bio-section">
+                <div class="section-tag" data-i18n="about.who">Qui suis-je ?</div>
+                <h2 data-i18n="about.who.title">Transformer les Données en Solutions Géospatiales</h2>
+                <p data-i18n="about.bio1">Audacieux et polyvalent, j'aime apprendre de nouvelles choses et relever des défis complexes. Pluridisciplinaire et ouvert d'esprit, j'écoute les autres tout en restant ferme dans mes décisions.</p>
+                <p data-i18n="about.bio2">Leader naturel, je m'engage à atteindre des objectifs ambitieux avec détermination et adaptabilité. Ma formation d'ingénieur en génie civil géomètre-topographe à l'ESTP/INP-HB m'a permis d'allier rigueur technique et vision globale des projets.</p>
+              </div>
+
+              <div class="details-grid">
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="250">
+                  <i class="bi bi-mortarboard"></i>
+                  <div class="detail-content">
+                    <span data-i18n="about.lbl.degree">Diplôme</span>
+                    <strong>Ingénieur Génie Civil</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="350">
+                  <i class="bi bi-geo-alt"></i>
+                  <div class="detail-content">
+                    <span data-i18n="about.lbl.location">Localisation</span>
+                    <strong>II Plateaux, Cocody, Abidjan</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bi bi-envelope"></i>
+                  <div class="detail-content">
+                    <span data-i18n="about.lbl.email">Email</span>
+                    <strong>charlesdeprincea@gmail</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="150">
+                  <i class="bi bi-phone"></i>
+                  <div class="detail-content">
+                    <span data-i18n="about.lbl.phone">Téléphone</span>
+                    <strong>+225 07 677 536 84</strong>
+                  </div>
+                </div>
+
+                <div class="detail-item" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-calendar-check"></i>
+                  <div class="detail-content">
+                    <span data-i18n="about.lbl.avail">Disponibilité</span>
+                    <strong data-i18n="about.val.avail">En poste | À l'écoute du marché</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skills-showcase" data-aos="fade-up" data-aos-delay="250">
+                <div class="section-tag" data-i18n="about.skills.tag">Logiciels Clés</div>
+                <h3 data-i18n="about.skills.title">Maîtrise Technique</h3>
+
+                <div class="skills-list skills-animation">
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">QGIS</span>
+                      <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">AutoCAD / Civil 3D</span>
+                      <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">ArcGIS</span>
+                      <span class="skill-percent">70%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">Python (géospatial)</span>
+                      <span class="skill-percent">65%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-info">
+                      <span class="skill-name">HTML / CSS / JavaScript</span>
+                      <span class="skill-percent">60%</span>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle" data-i18n="resume.subtitle">Parcours</span>
+        <h2 data-i18n="resume.title">Mon Parcours</h2>
+        <p data-i18n="resume.desc">Formations, expériences professionnelles et certifications qui constituent mon profil d'ingénieur géomètre-topographe spécialisé en géomatique et SIG.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <!-- Expériences professionnelles -->
+          <div class="col-lg-6">
+            <div class="experience-section">
+              <div class="section-header" data-aos="fade-right" data-aos-delay="200">
+                <div class="header-content">
+                  <span class="section-badge" data-i18n="resume.exp.badge">Expérience</span>
+                  <h2 data-i18n="resume.exp.title">Expériences Professionnelles</h2>
+                  <p data-i18n="resume.exp.desc">Des missions sur des projets d'envergure nationale, alliant géomatique, SIG, topographie et développement.</p>
+                </div>
+              </div>
+
+              <div class="experience-cards">
+
+                <!-- Poste actuel SICMA -->
+                <div class="exp-card featured" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="card-header">
+                    <div class="company-logo">
+                      <i class="bi bi-buildings"></i>
+                    </div>
+                    <div class="period-badge" data-i18n="resume.current">Actuel</div>
+                  </div>
+                  <div class="card-body">
+                    <h3 data-i18n="resume.exp1.title">Ingénieur Études</h3>
+                    <p class="company-name">SICMA – Bouygues Travaux Publics</p>
+                    <span class="duration">30 Octobre 2025 – Présent</span>
+                    <p class="description" data-i18n="resume.exp1.desc">Équipe TPM (Travaux Préparatoires Modifiés) – Ligne 1 du Métro d'Abidjan. Cartographie et numérisation des réseaux concessionnaires dans le cadre de la gestion des interfaces chantier.</p>
+                    <div class="skills-tags">
+                      <span class="skill-tag">Cartographie</span>
+                      <span class="skill-tag">Réseaux</span>
+                      <span class="skill-tag">SIG</span>
+                      <span class="skill-tag">Métro d'Abidjan</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TFE SICMA -->
+                <div class="exp-card" data-aos="zoom-in" data-aos-delay="320">
+                  <div class="card-header">
+                    <div class="company-logo">
+                      <i class="bi bi-journal-text"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3 data-i18n="resume.exp2.title">Travail de Fin d'Études</h3>
+                    <p class="company-name">SICMA – Bouygues Travaux Publics</p>
+                    <span class="duration">04 Mars – 04 Septembre 2025</span>
+                    <p class="description" data-i18n="resume.exp2.desc">Étude et Intégration de SIG pour la gestion des interfaces dans les projets d'infrastructures : Cas de la Ligne 1 du Métro d'Abidjan. Mise en place de Web Mapping pour la cartographie de réseaux et le suivi de chantiers.</p>
+                    <div class="skills-tags">
+                      <span class="skill-tag">SIG</span>
+                      <span class="skill-tag">Web Mapping</span>
+                      <span class="skill-tag">Infrastructure</span>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!-- Stage CNTIG -->
+                <div class="exp-card" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="card-header">
+                    <div class="company-logo">
+                      <i class="bi bi-map"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3 data-i18n="resume.exp3.title">Stage de Production</h3>
+                    <p class="company-name">CNTIG, Côte d'Ivoire</p>
+                    <span class="duration">01 Juillet – 13 Septembre 2024</span>
+                    <p class="description" data-i18n-html="resume.exp3.desc">Projet PSDL Tengrela : diagnostic territorial.<br>Projet E-Commune Agnibilekrou : correction de plans de lotissement communaux et conception de cartes de quartiers.</p>
+                    <div class="skills-tags">
+                      <span class="skill-tag">QGIS Atlas</span>
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Géospatial</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stage KKB -->
+                <div class="exp-card" data-aos="zoom-in" data-aos-delay="450">
+                  <div class="card-header">
+                    <div class="company-logo">
+                      <i class="bi bi-briefcase"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h3 data-i18n="resume.exp4.title">Stage d'Immersion</h3>
+                    <p class="company-name">Cabinet de Géomètre Expert KKB</p>
+                    <span class="duration">13 Juillet – 13 Août 2023</span>
+                    <p class="description" data-i18n="resume.exp4.desc">Acquisition de terre et compensation des cultures par la mine Perseus : traitement de données géospatiales par Python, conception automatique de cartes avec l'outil Atlas de QGIS.</p>
+                    <div class="skills-tags">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">QGIS</span>
+                      <span class="skill-tag">Topographie</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Formation & Certifications -->
+          <div class="col-lg-6">
+            <div class="education-section">
+              <div class="section-header" data-aos="fade-left" data-aos-delay="200">
+                <div class="header-content">
+                  <span class="section-badge" data-i18n="resume.edu.badge">Formation</span>
+                  <h2 data-i18n="resume.edu.title">Formation Académique</h2>
+                  <p data-i18n="resume.edu.desc">Un parcours rigoureux en classes préparatoires puis en cycle ingénieur, complété par des certifications professionnelles.</p>
+                </div>
+              </div>
+
+              <div class="education-timeline" data-aos="fade-left" data-aos-delay="300">
+                <div class="timeline-track">
+
+                  <!-- Cycle Ingénieur -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">2022 – 2025</span>
+                        <span class="degree-level" data-i18n="resume.edu1.level">Ingénieur</span>
+                      </div>
+                      <h4 data-i18n="resume.edu1.title">Cycle Ingénieur Génie Civil</h4>
+                      <p class="institution">ESTP / INP-HB, Yamoussoukro</p>
+                      <p class="description" data-i18n="resume.edu1.desc">Parcours académique comprenant un tronc commun puis une spécialisation en Géomètre-Topographe, SIG et géomatique.</p>
+                    </div>
+                  </div>
+
+                  <!-- PFE -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-pencil-square"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">Jan – Fév 2025</span>
+                        <span class="degree-level">PFE</span>
+                      </div>
+                      <h4 data-i18n="resume.edu2.title">Projet de Fin d'Études</h4>
+                      <p class="institution">ESTP / INP-HB, Yamoussoukro</p>
+                      <p class="description" data-i18n="resume.edu2.desc">Élaboration et Conception par CAO/DAO de l'Extension de la voie menant à l'INP-HB Nord.</p>
+                    </div>
+                  </div>
+
+                  <!-- Certifications -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">2022</span>
+                        <span class="degree-level" data-i18n="resume.edu3.level">Certification</span>
+                      </div>
+                      <h4 data-i18n="resume.edu3.title">Certificat d'Anglais</h4>
+                      <div class="certifications-list">
+                        <div class="cert-item">
+                          <span class="cert-name">Séjour Linguistique – Sunyani Technical University, Ghana</span>
+                          <span class="cert-year">2022</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CPGE -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-book"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">2020 – 2022</span>
+                        <span class="degree-level" data-i18n="resume.edu4.level">Prépa</span>
+                      </div>
+                      <h4>Classe Préparatoire MPSI/MP</h4>
+                      <p class="institution">CPGE / INP-HB, Yamoussoukro</p>
+                      <p class="description" data-i18n="resume.edu4.desc">Formation scientifique intensive en mathématiques, physique et sciences de l'ingénieur.</p>
+                    </div>
+                  </div>
+
+                  <!-- Bac -->
+                  <div class="timeline-item">
+                    <div class="timeline-marker">
+                      <i class="bi bi-award"></i>
+                    </div>
+                    <div class="timeline-content">
+                      <div class="education-meta">
+                        <span class="year-range">2019 – 2020</span>
+                        <span class="degree-level" data-i18n="resume.edu5.level">Baccalauréat</span>
+                      </div>
+                      <h4>Baccalauréat Scientifique (Série C)</h4>
+                      <p class="institution">Lycée Classique d'Abidjan</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Compétences Section -->
+    <section id="competences" class="services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle" data-i18n="skills.subtitle">Compétences</span>
+        <h2 data-i18n="skills.title">Mes Compétences</h2>
+        <p data-i18n="skills.desc">Un ensemble de compétences techniques et humaines développées tout au long de ma formation et de mes expériences professionnelles.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-globe"></i>
+              </div>
+              <h4 data-i18n="skills.sig.title">Logiciels SIG</h4>
+              <ul>
+                <li>QGIS</li>
+                <li>ArcGIS</li>
+                <li>Google Earth Pro</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-pencil-ruler"></i>
+              </div>
+              <h4 data-i18n="skills.cao.title">CAO / DAO</h4>
+              <ul>
+                <li>AutoCAD</li>
+                <li>Civil 3D</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h4 data-i18n="skills.prog.title">Programmation</h4>
+              <ul>
+                <li>Python</li>
+                <li>HTML / CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <h4 data-i18n="skills.office.title">Outils Bureautiques</h4>
+              <ul>
+                <li>Microsoft Word / Excel</li>
+                <li>PowerPoint</li>
+                <li>Canva</li>
+                <li>SharePoint</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-translate"></i>
+              </div>
+              <h4 data-i18n="skills.langs.title">Langues</h4>
+              <ul>
+                <li data-i18n="skills.langs.fr">Français – Natif</li>
+                <li data-i18n="skills.langs.en">Anglais – Niveau B1 (elAo)</li>
+                <li data-i18n="skills.langs.es">Espagnol – Notions</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-people"></i>
+              </div>
+              <h4 data-i18n="skills.soft.title">Compétences Pratiques</h4>
+              <ul>
+                <li data-i18n="skills.soft.1">Leadership</li>
+                <li data-i18n="skills.soft.2">Gestion de projet</li>
+                <li data-i18n="skills.soft.3">Communication</li>
+                <li data-i18n="skills.soft.4">Travail en équipe</li>
+                <li data-i18n="skills.soft.5">Rédaction</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-tools"></i>
+              </div>
+              <h4 data-i18n="skills.topo.title">Matériel Topographique</h4>
+              <ul>
+                <li data-i18n="skills.topo.1">Station Totale</li>
+                <li data-i18n="skills.topo.2">GPS Différentiel</li>
+                <li data-i18n="skills.topo.3">Niveau de Chantier</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="competence-card">
+              <div class="icon-wrapper">
+                <i class="bi bi-heart"></i>
+              </div>
+              <h4 data-i18n="skills.interests.title">Centres d'Intérêts</h4>
+              <ul>
+                <li data-i18n="skills.interests.1">Géomatique &amp; SIG</li>
+                <li data-i18n="skills.interests.2">Théâtre &amp; Art oratoire</li>
+                <li data-i18n="skills.interests.3">Musique</li>
+                <li data-i18n="skills.interests.4">Natation</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Compétences Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section" style="background:var(--background-color);">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Portfolio</span>
+        <h2 data-i18n="portfolio.title">Mes Projets</h2>
+        <p data-i18n="portfolio.desc">Projets de Web Mapping et SIG réalisés au sein de SICMA – Bouygues Travaux Publics, dans le cadre de la Ligne 1 du Métro d'Abidjan.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <!-- Projet 1 : Plateforme SIG -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="proj-card">
+              <div class="proj-img-wrap">
+                <img src="images/Interfaces Manager.png" class="img-fluid" alt="Plateforme SIG" loading="lazy">
+                <div class="proj-overlay">
+                  <div class="proj-actions">
+                    <a href="images/Interfaces Manager.png" class="glightbox proj-btn" data-gallery="p1" title="Apercu"><i class="bi bi-eye"></i></a>
+                    <a href="images/Connexion.png" class="glightbox d-none" data-gallery="p1"></a>
+                    <a href="images/Module 1.png" class="glightbox d-none" data-gallery="p1"></a>
+                    <a href="images/Module 2.png" class="glightbox d-none" data-gallery="p1"></a>
+                    <a href="images/ITC.png" class="glightbox d-none" data-gallery="p1"></a>
+                    <a href="images/Réseaux.png" class="glightbox d-none" data-gallery="p1"></a>
+                    <a href="images/S Chantier.png" class="glightbox d-none" data-gallery="p1"></a>
+                    <a href="portfolio1.html" class="proj-btn" title="Voir le projet"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="proj-body">
+                <div class="proj-meta">
+                  <span class="proj-cat">Web Mapping · SIG</span>
+                  <span class="proj-yr">2025</span>
+                </div>
+                <h3 class="proj-title" data-i18n="portfolio.p1.title">Plateforme SIG de Gestion des Interfaces</h3>
+                <p class="proj-desc" data-i18n="portfolio.p1.desc">Application web de cartographie interactive pour la gestion des interfaces chantier de la Ligne 1 du Métro d'Abidjan, avec un système de droits multi-niveaux.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2 : Module iFrame -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="proj-card">
+              <div class="proj-img-wrap">
+                <img src="images/PRA7.png" class="img-fluid" alt="Module Cartographique" loading="lazy">
+                <div class="proj-overlay">
+                  <div class="proj-actions">
+                    <a href="images/PRA7.png" class="glightbox proj-btn" data-gallery="p2" title="Apercu"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio2.html" class="proj-btn" title="Voir le projet"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="proj-body">
+                <div class="proj-meta">
+                  <span class="proj-cat">Web Mapping · iFrame</span>
+                  <span class="proj-yr">Avril 2026</span>
+                </div>
+                <h3 class="proj-title" data-i18n="portfolio.p2.title">Module Cartographique de Suivi des Chantiers</h3>
+                <p class="proj-desc" data-i18n="portfolio.p2.desc">Refonte de l'interface de suivi des chantiers pour intégration iframe dans un logiciel métier, avec popup statistiques Power BI par chantier.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle" data-i18n="contact.subtitle">Contact</span>
+        <h2 data-i18n="contact.title">Me Contacter</h2>
+        <p data-i18n="contact.desc">Vous avez une opportunité, un projet ou simplement envie d'échanger ? Je suis disponible et ouvert à toute discussion.</p>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon-wrapper">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <h3 data-i18n="contact.location">Localisation</h3>
+                <p>II Plateaux, Cocody, Abidjan</p>
+              </div>
+            </div>
+
+            <div class="info-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-wrapper">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div>
+                <h3 data-i18n="contact.phone">Téléphone</h3>
+                <p>+225 07 677 536 84</p>
+              </div>
+            </div>
+
+            <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-wrapper">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <h3 data-i18n="contact.email">Email</h3>
+                <p>charlesdeprincea@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact-form" action="https://formspree.io/f/mykvqnvg" method="POST">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control" placeholder="Votre email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" name="subject" class="form-control" placeholder="Sujet" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea name="message" class="form-control" rows="6" placeholder="Votre message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div id="form-sending" style="display:none; color: var(--default-color); margin-bottom: 12px;">Envoi en cours...</div>
+                  <div id="form-success" style="display:none; color: #4caf50; margin-bottom: 12px; font-weight: 500;">✓ Message envoyé ! Je vous répondrai dès que possible.</div>
+                  <div id="form-error" style="display:none; color: #e74c3c; margin-bottom: 12px;">Une erreur est survenue. Réessayez ou contactez-moi directement par email.</div>
+                  <button type="submit" id="form-btn">Envoyer le Message</button>
+                </div>
+
+              </div>
+            </form>
+
+            <script>
+              document.getElementById('contact-form').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                var btn = document.getElementById('form-btn');
+                var sending = document.getElementById('form-sending');
+                var success = document.getElementById('form-success');
+                var error = document.getElementById('form-error');
+
+                btn.disabled = true;
+                sending.style.display = 'block';
+                success.style.display = 'none';
+                error.style.display = 'none';
+
+                try {
+                  var res = await fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: { 'Accept': 'application/json' }
+                  });
+                  sending.style.display = 'none';
+                  if (res.ok) {
+                    success.style.display = 'block';
+                    this.reset();
+                  } else {
+                    error.style.display = 'block';
+                    btn.disabled = false;
+                  }
+                } catch (err) {
+                  sending.style.display = 'none';
+                  error.style.display = 'block';
+                  btn.disabled = false;
+                }
+              });
+            </script>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Charles BEZON</span>
+          </a>
+          <p data-i18n="footer.about">Ingénieur Génie Civil Géomètre-Topographe, spécialisé en SIG et Géomatique. Passionné par les technologies géospatiales et leur application dans les Grands Projets.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="mailto:charlesdeprincea@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
+            <a href="tel:+2250767753684" title="Téléphone"><i class="bi bi-telephone"></i></a>
+            <a href="https://www.linkedin.com/in/amoikon-charles-d-p-bezon-718651254" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4 data-i18n="footer.nav">Navigation</h4>
+          <ul>
+            <li><a href="#hero" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="#about" data-i18n="nav.about">Profil</a></li>
+            <li><a href="#resume" data-i18n="nav.resume">Parcours</a></li>
+            <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
+            <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4 data-i18n="footer.domains">Domaines</h4>
+          <ul>
+            <li><a href="#competences" data-i18n="footer.domain.1">SIG &amp; Géomatique</a></li>
+            <li><a href="#competences">CAO / DAO</a></li>
+            <li><a href="#competences" data-i18n="footer.domain.3">Programmation</a></li>
+            <li><a href="#competences" data-i18n="footer.domain.4">Topographie</a></li>
+            <li><a href="#competences" data-i18n="footer.domain.5">Langues</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <p>II Plateaux, Cocody</p>
+          <p>Abidjan</p>
+          <p>Côte d'Ivoire</p>
+          <p class="mt-4"><strong data-i18n="footer.tel">Tél :</strong> <span>+225 07 677 536 84</span></p>
+          <p><strong data-i18n="footer.email.label">Email :</strong> <span>charlesdeprincea@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>2026</span> <strong class="px-1 sitename">Charles BEZON</strong> <span data-i18n="footer.rights">– Tous droits réservés</span></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    if (window.history && window.history.scrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+
+</body>
+
+</html>
